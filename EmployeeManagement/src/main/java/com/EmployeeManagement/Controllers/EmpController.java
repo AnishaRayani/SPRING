@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.EmployeeManagement.HelperClass.HelperClass;
 import com.EmployeeManagement.bean.AdminBean;
 import com.EmployeeManagement.bean.EmpBean;
 
@@ -14,14 +14,14 @@ import com.EmployeeManagement.bean.EmpBean;
 public class EmpController {
 	@Autowired
 	Environment environment;
+	@Autowired
+	HelperClass helperclass;
 	/*
-	 * To add an employee which calls restadd in emprestcontroller to perform this function 
+	 * To add an employee which calls addemp in HelperClass to perform this function 
 	 */
 	@RequestMapping(value = "/add")
 	public ModelAndView addemp(EmpBean empbean, AdminBean adminbean) {
-		RestTemplate rt = new RestTemplate();
-		String port = environment.getProperty("local.server.port");
-		EmpBean result = rt.postForObject("http://localhost:"+port+"/restadd", empbean, EmpBean.class);
+		EmpBean result = helperclass.addemp(empbean, adminbean);
 		if (result != null) {
 			ModelAndView mv = new ModelAndView("AddEmpSuccess");
 			return mv;
@@ -38,9 +38,7 @@ public class EmpController {
 	 */
 	@RequestMapping(value = "/delete")
 	public ModelAndView deleteemp(EmpBean empbean) {
-		RestTemplate rt = new RestTemplate();
-		String port = environment.getProperty("local.server.port");
-		String result = rt.postForObject("http://localhost:"+port+"/restdelete", empbean, String.class);
+		String result=helperclass.deleteemp(empbean);
 		if (result.equals("SUCCESS")) {
 			ModelAndView mv = new ModelAndView("DeleteEmpSuccess");
 			return mv;
