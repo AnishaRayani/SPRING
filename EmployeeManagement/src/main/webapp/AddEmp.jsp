@@ -5,6 +5,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>ADD EMPLOYEE</title>
+<style>
+body {
+ background-color:powderblue;
+}
+span
+{
+color: red;
+}
+div
+{
+text-align: center;
+}</style>
 <script>
 	function validate() {
 		var empid = document.form.empid.value;
@@ -39,7 +51,6 @@
 		}
 	}
 </script>
-<link rel="stylesheet" type="text/css" href="Style.css">
 </head>
 <body>
 

@@ -5,7 +5,18 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>DELETE EMPLOYEE</title>
-
+<style>
+body {
+ background-color:powderblue;
+}
+span
+{
+color: red;
+}
+div
+{
+text-align: center;
+}</style>
 <script>
 	function validate() {
 		var empid = document.form.empid.value;
@@ -16,7 +27,6 @@
 	}
 </script>
 </head>
-<link rel="stylesheet" type="text/css" href="Style.css">
 <body>
 	<form name="form" action="/delete" method="POST"
 		onsubmit="return validate()">
