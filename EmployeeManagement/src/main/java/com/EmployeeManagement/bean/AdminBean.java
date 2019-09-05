@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Entity
+
 public class AdminBean {
 	@Id
 	private String username;
