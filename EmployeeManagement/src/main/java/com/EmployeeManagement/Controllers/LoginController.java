@@ -18,14 +18,17 @@ public class LoginController {
 	Environment environment;
 	@Autowired
 	HelperClass helperclass;
+
 	/*
-	 * To validate the username and password and tell whether it is a manager , employee or admin which calls validate in HelperClass to perform this function
+	 * To validate the username and password and tell whether it is a manager ,
+	 * employee or admin which calls validate in HelperClass to perform this
+	 * function
 	 */
 	@RequestMapping(value = "/validate")
 	public ModelAndView validate(AdminBean adminbean, HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		session.setAttribute("name", adminbean.getusername());
-		String result=helperclass.validate(adminbean, request);
+		String result = helperclass.validate(adminbean, request);
 		if (result.equals("index")) {
 			ModelAndView mv = new ModelAndView("index");
 			mv.addObject("errMessage", "INVALID USERNAME OR PASSWORD");
@@ -42,6 +45,7 @@ public class LoginController {
 		}
 
 	}
+
 	/*
 	 * TO LOGOUT FROM THE SESSION
 	 */

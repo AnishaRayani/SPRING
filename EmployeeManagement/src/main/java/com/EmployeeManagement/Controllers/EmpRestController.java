@@ -16,16 +16,18 @@ public class EmpRestController {
 	AddEmpDao add;
 	@Autowired
 	DeleteEmpdao delete;
+
 	/*
-	 * To add an employee which calls AddEmpDao to perform this function 
+	 * To add an employee which calls AddEmpDao to perform this function
 	 */
 	@RequestMapping(value = "/restadd")
 	public EmpBean addemp(@RequestBody EmpBean empbean) {
 		EmpBean result = add.addemp(empbean);
 		return result;
 	}
+
 	/*
-	 * To delete an employee which calls DeleteEmpdao to perform this function 
+	 * To delete an employee which calls DeleteEmpdao to perform this function
 	 */
 	@RequestMapping(value = "/restdelete")
 	public String deleteemp(@RequestBody EmpBean empbean) {

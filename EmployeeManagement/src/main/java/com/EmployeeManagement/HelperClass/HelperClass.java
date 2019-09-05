@@ -21,31 +21,38 @@ import com.EmployeeManagement.bean.EmpBean;
 public class HelperClass {
 	@Autowired
 	Environment environment;
+
 	public String validate(AdminBean adminbean, HttpServletRequest request) {
 		String port = environment.getProperty("local.server.port");
 		RestTemplate rt = new RestTemplate();
-		String result = rt.postForObject("http://localhost:"+port+"/restlogin/restvalidate", adminbean, String.class);
+		String result = rt.postForObject("http://localhost:" + port + "/restlogin/restvalidate", adminbean,
+				String.class);
 		return result;
 	}
+
 	/*
-	 * To add an employee which calls restadd in emprestcontroller to perform this function 
+	 * To add an employee which calls restadd in emprestcontroller to perform this
+	 * function
 	 */
 	public EmpBean addemp(EmpBean empbean, AdminBean adminbean) {
 		RestTemplate rt = new RestTemplate();
 		String port = environment.getProperty("local.server.port");
-		EmpBean result = rt.postForObject("http://localhost:"+port+"/restadd", empbean, EmpBean.class);
+		EmpBean result = rt.postForObject("http://localhost:" + port + "/restadd", empbean, EmpBean.class);
 		return result;
 	}
+
 	/*
-	 * To delete an employee which calls restdelete in emprestcontroller to perform this function 
+	 * To delete an employee which calls restdelete in emprestcontroller to perform
+	 * this function
 	 */
 	@RequestMapping(value = "/delete")
 	public String deleteemp(EmpBean empbean) {
 		RestTemplate rt = new RestTemplate();
 		String port = environment.getProperty("local.server.port");
-		String result = rt.postForObject("http://localhost:"+port+"/restdelete", empbean, String.class);
+		String result = rt.postForObject("http://localhost:" + port + "/restdelete", empbean, String.class);
 		return result;
 	}
+
 	/*
 	 * To retrieve a list of employee details order by employee id which calls
 	 * restlistempbyid in listemprestcontroller to perform this function
@@ -58,8 +65,9 @@ public class HelperClass {
 				new ParameterizedTypeReference<List<EmpBean>>() {
 				});
 		return x;
-		
+
 	}
+
 	/*
 	 * To retrieve a list of employee details order by department name which calls
 	 * restlistempbydepart in listemprestcontroller to perform this function
@@ -75,6 +83,7 @@ public class HelperClass {
 		return x;
 
 	}
+
 	/*
 	 * To retrieve a list of employee details under a particular manager which calls
 	 * restlistempbyreport in listemprestcontroller to perform this function
@@ -89,10 +98,11 @@ public class HelperClass {
 				new ParameterizedTypeReference<List<EmpBean>>() {
 				});
 		List<EmpBean> list = response.getBody();
-		
+
 		return list;
 
 	}
+
 	/*
 	 * To retrieve a list of employee details with pf which calls restlistempwithpf
 	 * in listemprestcontroller to perform this function
@@ -107,6 +117,7 @@ public class HelperClass {
 		return x;
 
 	}
+
 	/*
 	 * To retrieve a list of employee details whose salary range between 10000 and
 	 * 20000 which calls restlistemprange in listemprestcontroller to perform this
@@ -120,10 +131,9 @@ public class HelperClass {
 		ResponseEntity<List<EmpBean>> x = rt.exchange(location, HttpMethod.GET, null,
 				new ParameterizedTypeReference<List<EmpBean>>() {
 				});
-		
+
 		return x;
 
 	}
 
-	
 }

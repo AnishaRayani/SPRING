@@ -27,7 +27,7 @@ public class ListEmpController {
 	 */
 	@RequestMapping(value = "/listempbyid")
 	public ModelAndView listempbyid() {
-		ResponseEntity<List<EmpBean>> x=helperclass.listempbyid();
+		ResponseEntity<List<EmpBean>> x = helperclass.listempbyid();
 		ModelAndView mv = new ModelAndView("Display");
 		mv.addObject("object", x.getBody());
 		return mv;
@@ -40,7 +40,7 @@ public class ListEmpController {
 	 */
 	@RequestMapping(value = "/listempbydepart")
 	public ModelAndView listempbydepart() {
-		ResponseEntity<List<EmpBean>> x=helperclass.listempbydepart();
+		ResponseEntity<List<EmpBean>> x = helperclass.listempbydepart();
 		ModelAndView mv = new ModelAndView("Display");
 		mv.addObject("object", x.getBody());
 		return mv;
@@ -53,7 +53,7 @@ public class ListEmpController {
 	 */
 	@RequestMapping(value = "/listempbyreport")
 	public ModelAndView listempbyreport(EmpBean empbean, HttpServletRequest request) {
-		List<EmpBean> list=helperclass.listempbyreport(empbean, request);
+		List<EmpBean> list = helperclass.listempbyreport(empbean, request);
 		ModelAndView mv = new ModelAndView("Display");
 		mv.addObject("object", list);
 		return mv;
@@ -61,12 +61,12 @@ public class ListEmpController {
 	}
 
 	/*
-	 * To retrieve a list of employee details with pf which calls listempwithpf
-	 * in HelperClass to perform this function
+	 * To retrieve a list of employee details with pf which calls listempwithpf in
+	 * HelperClass to perform this function
 	 */
 	@RequestMapping(value = "/listwithpf")
 	public ModelAndView listempwithpf() {
-		ResponseEntity<List<EmpBean>> x=helperclass.listempwithpf();
+		ResponseEntity<List<EmpBean>> x = helperclass.listempwithpf();
 		ModelAndView mv = new ModelAndView("EmpDetailswithpf");
 		mv.addObject("object", x.getBody());
 		return mv;
@@ -75,13 +75,12 @@ public class ListEmpController {
 
 	/*
 	 * To retrieve a list of employee details whose salary range between 10000 and
-	 * 20000 which calls listempwithrange in HelperClass to perform this
-	 * function
+	 * 20000 which calls listempwithrange in HelperClass to perform this function
 	 */
 	@RequestMapping(value = "/listwithrange")
 	public ModelAndView listempwithrange() {
 
-		ResponseEntity<List<EmpBean>> x=helperclass.listempwithrange();
+		ResponseEntity<List<EmpBean>> x = helperclass.listempwithrange();
 
 		ModelAndView mv = new ModelAndView("Display");
 		mv.addObject("object", x.getBody());

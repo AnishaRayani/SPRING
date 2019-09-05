@@ -13,8 +13,10 @@ import com.EmployeeManagement.dao.ValidationDao;
 public class LoginRestController {
 	@Autowired
 	ValidationDao vd;
+
 	/*
-	 * To validate the username and password and tell whether it is a manager , employee or admin which calls ValidationDao to perform this function
+	 * To validate the username and password and tell whether it is a manager ,
+	 * employee or admin which calls ValidationDao to perform this function
 	 */
 	@RequestMapping(value = "/restvalidate")
 	public String validate(@RequestBody AdminBean adminbean) {

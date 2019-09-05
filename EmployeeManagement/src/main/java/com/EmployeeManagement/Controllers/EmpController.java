@@ -16,8 +16,9 @@ public class EmpController {
 	Environment environment;
 	@Autowired
 	HelperClass helperclass;
+
 	/*
-	 * To add an employee which calls addemp in HelperClass to perform this function 
+	 * To add an employee which calls addemp in HelperClass to perform this function
 	 */
 	@RequestMapping(value = "/add")
 	public ModelAndView addemp(EmpBean empbean, AdminBean adminbean) {
@@ -33,12 +34,14 @@ public class EmpController {
 		}
 
 	}
+
 	/*
-	 * To delete an employee which calls restdelete in emprestcontroller to perform this function 
+	 * To delete an employee which calls restdelete in emprestcontroller to perform
+	 * this function
 	 */
 	@RequestMapping(value = "/delete")
 	public ModelAndView deleteemp(EmpBean empbean) {
-		String result=helperclass.deleteemp(empbean);
+		String result = helperclass.deleteemp(empbean);
 		if (result.equals("SUCCESS")) {
 			ModelAndView mv = new ModelAndView("DeleteEmpSuccess");
 			return mv;

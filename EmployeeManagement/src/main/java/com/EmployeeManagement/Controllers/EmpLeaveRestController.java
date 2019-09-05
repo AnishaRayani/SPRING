@@ -24,24 +24,30 @@ public class EmpLeaveRestController {
 	GrantPermissionDao grant;
 	@Autowired
 	CheckStatusDao check;
+
 	/*
-	 * To apply leave as an employee or manager which calls addempleavedao to perform this function
+	 * To apply leave as an employee or manager which calls addempleavedao to
+	 * perform this function
 	 */
 	@RequestMapping(value = "/restempleave")
 	public LeaveBean addempleave(@RequestBody LeaveBean leavebean) {
 		LeaveBean result = add.addempleave(leavebean);
 		return result;
 	}
+
 	/*
-	 * To retrieve a list of employee under a particular manager to grant permission for leave which calls GrantLeaveDao to perform this function
+	 * To retrieve a list of employee under a particular manager to grant permission
+	 * for leave which calls GrantLeaveDao to perform this function
 	 */
 	@RequestMapping(value = "/restgrantleave")
 	public List<LeaveBean> grantleave(@RequestBody LeaveBean leavebean) {
 		List<LeaveBean> result = grantleave.grantleave(leavebean);
 		return result;
 	}
+
 	/*
-	 * To accept or reject the leave by the manager which calls GrantPermissionDao to perform this function
+	 * To accept or reject the leave by the manager which calls GrantPermissionDao
+	 * to perform this function
 	 */
 	@RequestMapping(value = "/restgrant")
 	public List<LeaveBean> grantpermission(@RequestBody LeaveBean leavebean) {
@@ -50,8 +56,10 @@ public class EmpLeaveRestController {
 		return result;
 
 	}
+
 	/*
-	 * To check status for the applied leave which calls CheckStatusDao to perform this function
+	 * To check status for the applied leave which calls CheckStatusDao to perform
+	 * this function
 	 */
 	@RequestMapping(value = "/restcheckstatus")
 	public List<LeaveBean> checkstatus(@RequestBody LeaveBean leavebean) {
