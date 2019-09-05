@@ -16,11 +16,12 @@
 	}
 </script>
 </head>
-<body bgcolor="#FFA07A">
+<link rel="stylesheet" type="text/css" href="Style.css">
+<body>
 	<form name="form" action="/delete" method="POST"
 		onsubmit="return validate()">
 		Empid:<input type="text" name="empid"><br> <br> <br>
-		<span style="color: red"><%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage")%></span>
+		<span><%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage")%></span>
 		<input type="submit" value="submit" name="submit">
 	</form>
 	<br>

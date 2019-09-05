@@ -1,0 +1,28 @@
+@charset "UTF-8";
+body {
+ background-color:powderblue;
+}
+span
+{
+color: red;
+}
+div
+{
+text-align: center;
+}
+#b1 {
+	style: none;
+	border: none;
+	width: 180px;
+	height: 20px;
+	text-align: left;
+}
+table {
+	border: 1px solid black;
+  width: 80%;
+}
+
+th,td {
+	border: 1px solid black;
+  height: 50px;
+}

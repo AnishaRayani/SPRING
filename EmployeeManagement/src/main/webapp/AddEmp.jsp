@@ -39,13 +39,9 @@
 		}
 	}
 </script>
-<style>
-div {
-	text-align: center;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="Style.css">
 </head>
-<body bgcolor="#EDBB99">
+<body>
 
 	<br>
 	<form name="form" action="/add" method="post" onsubmit="return validate()">
@@ -78,7 +74,7 @@ div {
 					<td><input type="text" name="salary" /><br> <br></td>
 				</tr>
 				<tr>
-					<td><span style="color: red"><%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage")%></span></td>
+					<td><span><%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage")%></span></td>
 				</tr>
 				<tr>
 					<td></td>

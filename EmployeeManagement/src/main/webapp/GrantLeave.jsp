@@ -1,11 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.*"%>
-<%@page
-	import="java.sql.DriverManager,com.EmployeeManagement.bean.LeaveBean,javax.servlet.http.HttpSession"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.Connection"%>
+<%@page import="com.EmployeeManagement.bean.LeaveBean,javax.servlet.http.HttpSession"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,10 +9,11 @@
 <title>GRANT LEAVE</title>
 
 </head>
-<body bgcolor="#EDBB99">
-	<div style="text-align: center">
+<link rel="stylesheet" type="text/css" href="Style.css">
+<body>
+	<div>
 
-		<table border="10" style="width: 80%">
+		<table>
 			<tr>
 				<th>LEAVE ID</th>
 				<th>Employee Name</th>

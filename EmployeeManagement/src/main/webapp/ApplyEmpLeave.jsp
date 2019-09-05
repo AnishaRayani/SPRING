@@ -23,21 +23,9 @@
 		}
 	}
 </script>
-<style>
-#b1 {
-	style: none;
-	border: none;
-	width: 180px;
-	height: 20px;
-	text-align: left;
-}
-
-div {
-	text-align: center;
-}
-</style>
 </head>
-<body bgcolor="#EDBB99">
+<link rel="stylesheet" type="text/css" href="Style.css">
+<body>
 	<div>
 		<table>
 			<%
@@ -62,10 +50,10 @@ div {
 					<td><input type="text" name="reason" /><br> <br></td>
 				</tr>
 				<tr>
-					<td><span style="color: red"><%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage")%></span></td>
+					<td><span><%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage")%></span></td>
 				</tr>
 				<tr>
-					<td></td>
+					
 					<td><input type="submit" value="submit" name="submit"></input><input
 						type="reset" value="Reset"></input></td>
 				</tr>

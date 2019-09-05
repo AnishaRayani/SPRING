@@ -5,13 +5,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>DELETED EMPLOYEE SUCCESSFULLY</title>
-<style>
-h3 {
-	text-align: center;
-}
-</style>
 </head>
-<body bgcolor="#FFA07A">
+<link rel="stylesheet" type="text/css" href="Style.css">
+<body>
 	<h3>EMPLOYEE DELETED SUCCESSFULLY</h3>
 	<a href="AdminOptions.jsp">GO BACK TO OPTIONS</a>
 	<br>

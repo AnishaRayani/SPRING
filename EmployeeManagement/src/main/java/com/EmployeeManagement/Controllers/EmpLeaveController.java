@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.EmployeeManagement.Controllers;
 
 import java.util.List;
 
@@ -47,11 +47,10 @@ public class EmpLeaveController {
 	 * To retrieve a list of employee under a particular manager to grant permission for leave which calls restgrantleave in empleaverestcontroller to perform this function
 	 */
 	@RequestMapping(value = "/grantleave")
-	public ModelAndView grantleave(String varname, LeaveBean leavebean, HttpServletRequest request) {
+	public ModelAndView grantleave(LeaveBean leavebean, HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		String name = (String) session.getAttribute("name");
 		leavebean.setEmpname(name);
-		if (varname.equals("grantleave")) {
 			HttpEntity<LeaveBean> requestEntity = new HttpEntity<>(leavebean);
 			RestTemplate restTemplate = new RestTemplate();
 			String port = environment.getProperty("local.server.port");
@@ -70,8 +69,7 @@ public class EmpLeaveController {
 				return mv;
 			}
 
-		}
-		return null;
+		
 	}
 	/*
 	 * To accept or reject the leave by the manager which calls restgrant in empleaverestcontroller to perform this function

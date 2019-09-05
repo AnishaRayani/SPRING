@@ -5,13 +5,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>ADDED SUCCESSFULLY</title>
-<style>
-h3 {
-	text-align: center;
-}
-</style>
 </head>
-<body bgcolor="#FFA07A">
+<link rel="stylesheet" type="text/css" href="Style.css">
+<body>
 	<h3>EMPLOYEE ADDED SUCCESSFULLY</h3>
 	<a href="AdminOptions.jsp">GO BACK TO OPTIONS</a>
 	<br>

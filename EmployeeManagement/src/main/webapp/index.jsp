@@ -19,11 +19,29 @@
 		}
 	}
 </script>
+<style>
+body {
+	 background-color:powderblue;
+	}
+	span
+	{
+	color: red;
+	}
+	div
+	{
+	text-align: center;
+	}
+	table {
+	
+  width: 80%;
+}
+
+	</style>
 </head>
 <body>
-	<div style="background-color: powderblue; text-align: center">
+	<div>
 
-		<div style="text-align: center">
+		<div>
 			<h2>
 				WELCOME<br>
 			</h2>
@@ -44,7 +62,7 @@
 				<td><input type="password" name="password" /></td>
 			</tr>
 			<tr>
-				<td><span style="color: red"><%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage") %></span></td>
+				<td><span><%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage") %></span></td>
 
 			</tr>
 
