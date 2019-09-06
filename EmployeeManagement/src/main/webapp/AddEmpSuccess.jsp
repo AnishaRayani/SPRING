@@ -8,12 +8,15 @@
 </head>
 <link rel="stylesheet" type="text/css" href="Style.css">
 <body>
+
 	<h3>EMPLOYEE ADDED SUCCESSFULLY</h3>
+
 	<a href="AdminOptions.jsp">GO BACK TO OPTIONS</a>
 	<br>
 	<br>
 	<a href=/logout>LOGOUT</a>
 	<br>
 	<br>
+
 </body>
 </html>

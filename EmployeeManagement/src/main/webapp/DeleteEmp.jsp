@@ -7,22 +7,27 @@
 <title>DELETE EMPLOYEE</title>
 <style>
 body {
- background-color:powderblue;
+	background-color: powderblue;
 }
-span
-{
-color: red;
+
+span {
+	color: red;
 }
-div
-{
-text-align: center;
-}</style>
+
+div {
+	text-align: center;
+}
+</style>
 <script>
 	function validate() {
+
 		var empid = document.form.empid.value;
+
 		if (empid == null || empid == "") {
+
 			alert("EMPID cannot be blank");
 			return false;
+
 		}
 	}
 </script>

@@ -1,15 +1,14 @@
 package com.EmployeeManagement.bean;
 
 import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
-
 import org.springframework.stereotype.Component;
 
 @Component
 @Entity
 public class EmpBean {
+
 	@Id
 	private String empid;
 	private String empname;
@@ -17,7 +16,6 @@ public class EmpBean {
 	private String departmentname;
 	private String reportingmanager;
 	private float salary;
-
 	static List<EmpBean> list;
 
 	public String getEmpid() {
@@ -74,6 +72,6 @@ public class EmpBean {
 
 	public List<EmpBean> getList() {
 		return EmpBean.list;
-
 	}
+
 }

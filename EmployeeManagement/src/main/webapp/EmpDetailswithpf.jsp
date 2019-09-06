@@ -36,7 +36,7 @@
 				<td><%=b.getDepartmentname()%></td>
 				<td><%=b.getReportingmanager()%></td>
 				<td><%=b.getSalary()%></td>
-				<td><%=(b.getSalary()/100)*5%></td>
+				<td><%=(b.getSalary() / 100) * 5%></td>
 			</tr>
 			<%
 				}

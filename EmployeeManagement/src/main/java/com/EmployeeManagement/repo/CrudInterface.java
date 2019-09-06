@@ -7,6 +7,7 @@ import com.EmployeeManagement.bean.EmpBean;
 import com.EmployeeManagement.bean.LeaveBean;
 
 public interface CrudInterface {
+
 	public abstract String getAdminUsername(AdminBean adminbean);
 
 	public abstract List<EmpBean> getuser(String name);

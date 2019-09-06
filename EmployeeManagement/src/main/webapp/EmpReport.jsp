@@ -5,13 +5,16 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>VIEW EMPLOYEE UNDER PARTICULAR REPORTING MANAGER</title>
-
 <script>
 	function validate() {
+
 		var reportingmanager = document.form.reportingmanager.value;
+
 		if (reportingmanager == null || reportingmanager == "") {
+
 			alert("ReportingManager cannot be blank");
 			return false;
+
 		}
 	}
 </script>
@@ -21,8 +24,7 @@
 	<form name="form" action="/listempbyreport?varname=employeereporting"
 		method="POST" onsubmit="return validate()">
 		ReportingManager:<input type="text" name="reportingmanager"><br>
-		<br> <br>
-		<span><%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage")%></span>
+		<br> <br> <span><%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage")%></span>
 		<input type="submit" value="submit" name="submit">
 	</form>
 	<br>

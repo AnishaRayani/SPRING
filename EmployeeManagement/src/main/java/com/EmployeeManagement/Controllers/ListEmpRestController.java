@@ -1,18 +1,17 @@
 package com.EmployeeManagement.Controllers;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.EmployeeManagement.bean.EmpBean;
 import com.EmployeeManagement.dao.ListEmpDao;
 
 @RestController
 @RequestMapping(value = "restlist")
 public class ListEmpRestController {
+
 	@Autowired
 	ListEmpDao vd;
 
@@ -22,7 +21,9 @@ public class ListEmpRestController {
 	 */
 	@RequestMapping(value = "/restlistempbyid")
 	public List<EmpBean> listempbyid() {
+
 		List<EmpBean> result = vd.listempbyid();
+
 		return result;
 	}
 
@@ -32,7 +33,9 @@ public class ListEmpRestController {
 	 */
 	@RequestMapping(value = "/restlistempbydepart")
 	public List<EmpBean> listempbydepart() {
+
 		List<EmpBean> result = vd.listempbydepart();
+
 		return result;
 	}
 
@@ -42,7 +45,9 @@ public class ListEmpRestController {
 	 */
 	@RequestMapping(value = "/restlistempbyreport")
 	public List<EmpBean> listempreport(@RequestBody EmpBean empbean) {
+
 		List<EmpBean> result = vd.listempreport(empbean);
+
 		return result;
 	}
 
@@ -52,7 +57,9 @@ public class ListEmpRestController {
 	 */
 	@RequestMapping(value = "/restlistempwithpf")
 	public List<EmpBean> listempwithpf() {
+
 		List<EmpBean> result = vd.listempwithpf();
+
 		return result;
 	}
 
@@ -62,7 +69,9 @@ public class ListEmpRestController {
 	 */
 	@RequestMapping(value = "/restlistemprange")
 	public List<EmpBean> listemprange() {
+
 		List<EmpBean> result = vd.listemprange();
+
 		return result;
 	}
 }

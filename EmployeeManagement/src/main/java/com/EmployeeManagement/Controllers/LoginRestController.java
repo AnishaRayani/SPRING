@@ -4,13 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.EmployeeManagement.bean.AdminBean;
 import com.EmployeeManagement.dao.ValidationDao;
 
 @RestController
 @RequestMapping(value = "restlogin")
 public class LoginRestController {
+
 	@Autowired
 	ValidationDao vd;
 
@@ -20,7 +20,9 @@ public class LoginRestController {
 	 */
 	@RequestMapping(value = "/restvalidate")
 	public String validate(@RequestBody AdminBean adminbean) {
+
 		String result = vd.get(adminbean);
+
 		return result;
 	}
 }

@@ -7,18 +7,20 @@
 <title>ADD EMPLOYEE</title>
 <style>
 body {
- background-color:powderblue;
+	background-color: powderblue;
 }
-span
-{
-color: red;
+
+span {
+	color: red;
 }
-div
-{
-text-align: center;
-}</style>
+
+div {
+	text-align: center;
+}
+</style>
 <script>
 	function validate() {
+
 		var empid = document.form.empid.value;
 		var empname = document.form.empname.value;
 		var email = document.form.email.value;
@@ -27,27 +29,35 @@ text-align: center;
 		var salary = document.form.salary.value;
 
 		if (empid == null || empid == "") {
+
 			alert("Empid cannot be blank");
 			return false;
+
 		} else if (empname == null || empname == "") {
+
 			alert("EmpName cannot be blank");
 			return false;
-		}
-		else if (email == null || email == "") {
+
+		} else if (email == null || email == "") {
+
 			alert("Email cannot be blank");
 			return false;
-		}
-		else if (departmentname == null || departmentname == "") {
+
+		} else if (departmentname == null || departmentname == "") {
+
 			alert("DepartmentName cannot be blank");
 			return false;
-		}
-		else if (reportingmanager == null || reportingmanager == "") {
+
+		} else if (reportingmanager == null || reportingmanager == "") {
+
 			alert("ReportingManager cannot be blank");
 			return false;
-		}
-		else if (salary == null || salary == "") {
+
+		} else if (salary == null || salary == "") {
+
 			alert("Salary cannot be blank");
 			return false;
+
 		}
 	}
 </script>
@@ -55,7 +65,8 @@ text-align: center;
 <body>
 
 	<br>
-	<form name="form" action="/add" method="post" onsubmit="return validate()">
+	<form name="form" action="/add" method="post"
+		onsubmit="return validate()">
 
 		<div>
 			<table>
@@ -85,7 +96,8 @@ text-align: center;
 					<td><input type="text" name="salary" /><br> <br></td>
 				</tr>
 				<tr>
-					<td><span><%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage")%></span></td>
+					<td><span> <%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage")%>
+					</span></td>
 				</tr>
 				<tr>
 					<td></td>

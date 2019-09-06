@@ -3,13 +3,12 @@ package com.EmployeeManagement.bean;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-
 import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-
 public class AdminBean {
+
 	@Id
 	private String username;
 	private String password;
@@ -36,7 +35,6 @@ public class AdminBean {
 	}
 
 	public void setPassword(String password) {
-
 		this.password = password;
 	}
 

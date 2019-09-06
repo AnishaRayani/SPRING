@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.*"%>
-<%@page import="com.EmployeeManagement.bean.LeaveBean,javax.servlet.http.HttpSession"%>
+<%@page import="com.EmployeeManagement.bean.LeaveBean"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,8 +37,10 @@
 				<td><%=b.getEnddate()%></td>
 				<td><%=b.getReason()%></td>
 				<td><%=b.getStatus()%></td>
-				<td><a href=/grantpermission?status=accept&id=<%=b.getLeaveid()%>>>accept</a></td>
-				<td><a href=/grantpermission?status=reject&id=<%=b.getLeaveid()%>>>reject</a></td>
+				<td><a href=/grantpermission?status=accept&id=
+					<%=b.getLeaveid()%>>>accept</a></td>
+				<td><a href=/grantpermission?status=reject&id=
+					<%=b.getLeaveid()%>>>reject</a></td>
 			</tr>
 			<%
 				}

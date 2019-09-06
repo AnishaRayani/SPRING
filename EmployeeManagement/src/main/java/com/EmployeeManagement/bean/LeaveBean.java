@@ -1,12 +1,10 @@
 package com.EmployeeManagement.bean;
 
 import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
 import org.springframework.stereotype.Component;
 
 @Component
@@ -21,7 +19,6 @@ public class LeaveBean {
 	private String enddate;
 	private String reason;
 	private String status;
-
 	static List<LeaveBean> list;
 
 	public String getStatus() {

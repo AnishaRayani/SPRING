@@ -7,36 +7,40 @@
 <title>Home</title>
 <script>
 	function validate() {
+		
 		var username = document.form.username.value;
 		var password = document.form.password.value;
 
 		if (username == null || username == "") {
+			
 			alert("Username cannot be blank");
 			return false;
+			
 		} else if (password == null || password == "") {
+			
 			alert("Password cannot be blank");
 			return false;
+			
 		}
 	}
 </script>
 <style>
 body {
-	 background-color:powderblue;
-	}
-	span
-	{
-	color: red;
-	}
-	div
-	{
-	text-align: center;
-	}
-	table {
-	
-  width: 80%;
+	background-color: powderblue;
 }
 
-	</style>
+span {
+	color: red;
+}
+
+div {
+	text-align: center;
+}
+
+table {
+	width: 80%;
+}
+</style>
 </head>
 <body>
 	<div>
@@ -62,7 +66,8 @@ body {
 				<td><input type="password" name="password" /></td>
 			</tr>
 			<tr>
-				<td><span><%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage") %></span></td>
+				<td><span><%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage") %>
+				</span></td>
 
 			</tr>
 

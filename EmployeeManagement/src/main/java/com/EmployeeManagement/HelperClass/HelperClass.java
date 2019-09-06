@@ -1,9 +1,7 @@
 package com.EmployeeManagement.HelperClass;
 
 import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.core.env.Environment;
@@ -13,20 +11,23 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
-
 import com.EmployeeManagement.bean.AdminBean;
 import com.EmployeeManagement.bean.EmpBean;
 
 @Service
 public class HelperClass {
+
 	@Autowired
 	Environment environment;
 
 	public String validate(AdminBean adminbean, HttpServletRequest request) {
+
 		String port = environment.getProperty("local.server.port");
 		RestTemplate rt = new RestTemplate();
+
 		String result = rt.postForObject("http://localhost:" + port + "/restlogin/restvalidate", adminbean,
 				String.class);
+
 		return result;
 	}
 
@@ -35,9 +36,12 @@ public class HelperClass {
 	 * function
 	 */
 	public EmpBean addemp(EmpBean empbean, AdminBean adminbean) {
+
 		RestTemplate rt = new RestTemplate();
 		String port = environment.getProperty("local.server.port");
+
 		EmpBean result = rt.postForObject("http://localhost:" + port + "/restadd", empbean, EmpBean.class);
+
 		return result;
 	}
 
@@ -47,9 +51,12 @@ public class HelperClass {
 	 */
 	@RequestMapping(value = "/delete")
 	public String deleteemp(EmpBean empbean) {
+
 		RestTemplate rt = new RestTemplate();
 		String port = environment.getProperty("local.server.port");
+
 		String result = rt.postForObject("http://localhost:" + port + "/restdelete", empbean, String.class);
+
 		return result;
 	}
 
@@ -58,12 +65,15 @@ public class HelperClass {
 	 * restlistempbyid in listemprestcontroller to perform this function
 	 */
 	public ResponseEntity<List<EmpBean>> listempbyid() {
+
 		RestTemplate rt = new RestTemplate();
 		String port = environment.getProperty("local.server.port");
 		String location = "http://localhost:" + port + "/restlist/restlistempbyid";
+
 		ResponseEntity<List<EmpBean>> x = rt.exchange(location, HttpMethod.GET, null,
 				new ParameterizedTypeReference<List<EmpBean>>() {
 				});
+
 		return x;
 
 	}
@@ -77,9 +87,11 @@ public class HelperClass {
 		RestTemplate rt = new RestTemplate();
 		String port = environment.getProperty("local.server.port");
 		String location = "http://localhost:" + port + "/restlist/restlistempbydepart";
+
 		ResponseEntity<List<EmpBean>> x = rt.exchange(location, HttpMethod.GET, null,
 				new ParameterizedTypeReference<List<EmpBean>>() {
 				});
+
 		return x;
 
 	}
@@ -89,10 +101,13 @@ public class HelperClass {
 	 * restlistempbyreport in listemprestcontroller to perform this function
 	 */
 	public List<EmpBean> listempbyreport(EmpBean empbean, HttpServletRequest request) {
+
 		request.getSession().setAttribute("report", empbean.getReportingmanager());
+
 		HttpEntity<EmpBean> requestEntity = new HttpEntity<>(empbean);
 		RestTemplate restTemplate = new RestTemplate();
 		String port = environment.getProperty("local.server.port");
+
 		ResponseEntity<List<EmpBean>> response = restTemplate.exchange(
 				"http://localhost:" + port + "/restlist/restlistempbyreport", HttpMethod.POST, requestEntity,
 				new ParameterizedTypeReference<List<EmpBean>>() {
@@ -108,12 +123,15 @@ public class HelperClass {
 	 * in listemprestcontroller to perform this function
 	 */
 	public ResponseEntity<List<EmpBean>> listempwithpf() {
+
 		RestTemplate rt = new RestTemplate();
 		String port = environment.getProperty("local.server.port");
 		String location = "http://localhost:" + port + "/restlist/restlistempwithpf";
+
 		ResponseEntity<List<EmpBean>> x = rt.exchange(location, HttpMethod.GET, null,
 				new ParameterizedTypeReference<List<EmpBean>>() {
 				});
+
 		return x;
 
 	}
@@ -128,6 +146,7 @@ public class HelperClass {
 		RestTemplate rt = new RestTemplate();
 		String port = environment.getProperty("local.server.port");
 		String location = "http://localhost:" + port + "/restlist/restlistemprange";
+
 		ResponseEntity<List<EmpBean>> x = rt.exchange(location, HttpMethod.GET, null,
 				new ParameterizedTypeReference<List<EmpBean>>() {
 				});
