@@ -1,4 +1,4 @@
-package com.comakeit.ems.controllers;
+package com.comakeit.ems.restcontrollers;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
