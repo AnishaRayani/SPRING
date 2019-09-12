@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.EmployeeManagement.dao.ValidationDao;
-import com.comakeit.ems.AdminBean;
+import com.comakeit.ems.bean.AdminBean;
 
 @RestController
 @RequestMapping(value = "restlogin")

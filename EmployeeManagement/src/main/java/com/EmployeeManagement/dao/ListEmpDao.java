@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.EmployeeManagement.repo.Crud;
-import com.comakeit.ems.EmpBean;
+import com.comakeit.ems.bean.EmpBean;
 
 @Component
 public class ListEmpDao {

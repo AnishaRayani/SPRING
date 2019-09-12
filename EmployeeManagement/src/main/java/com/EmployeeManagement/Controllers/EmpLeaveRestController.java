@@ -10,7 +10,7 @@ import com.EmployeeManagement.dao.AddEmpLeaveDao;
 import com.EmployeeManagement.dao.CheckStatusDao;
 import com.EmployeeManagement.dao.GrantLeaveDao;
 import com.EmployeeManagement.dao.GrantPermissionDao;
-import com.comakeit.ems.LeaveBean;
+import com.comakeit.ems.bean.LeaveBean;
 
 @RestController
 @RequestMapping(value = "restleave")

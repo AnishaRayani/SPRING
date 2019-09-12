@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 import com.EmployeeManagement.repo.Crud;
 import com.EmployeeManagement.repo.EmpRepository;
-import com.comakeit.ems.EmpBean;
+import com.comakeit.ems.bean.EmpBean;
 
 @Component
 public class DeleteEmpdao {

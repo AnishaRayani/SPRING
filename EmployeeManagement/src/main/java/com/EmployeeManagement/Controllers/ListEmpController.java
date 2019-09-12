@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import com.EmployeeManagement.HelperClass.HelperClass;
-import com.comakeit.ems.EmpBean;
+import com.comakeit.ems.bean.EmpBean;
 
 @Controller
 public class ListEmpController {

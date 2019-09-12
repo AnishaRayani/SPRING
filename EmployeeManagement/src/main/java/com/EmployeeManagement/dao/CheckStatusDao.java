@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.EmployeeManagement.repo.Crud;
-import com.comakeit.ems.LeaveBean;
+import com.comakeit.ems.bean.LeaveBean;
 
 @Component
 public class CheckStatusDao {

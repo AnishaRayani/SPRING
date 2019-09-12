@@ -1,5 +1,5 @@
 
-package com.comakeit.ems;
+package com.comakeit.ems.bean;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

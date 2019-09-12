@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.comakeit.ems.AdminBean;
-import com.comakeit.ems.EmpBean;
-import com.comakeit.ems.LeaveBean;
+import com.comakeit.ems.bean.AdminBean;
+import com.comakeit.ems.bean.EmpBean;
+import com.comakeit.ems.bean.LeaveBean;
 
 @Service
 public class Crud implements CrudInterface {

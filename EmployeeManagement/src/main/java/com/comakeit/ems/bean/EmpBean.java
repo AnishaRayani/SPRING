@@ -1,4 +1,4 @@
-package com.comakeit.ems;
+package com.comakeit.ems.bean;
 
 import java.util.List;
 import javax.persistence.Entity;

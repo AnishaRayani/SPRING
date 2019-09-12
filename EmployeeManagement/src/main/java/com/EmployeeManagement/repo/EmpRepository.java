@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.comakeit.ems.EmpBean;
+import com.comakeit.ems.bean.EmpBean;
 
 @org.springframework.stereotype.Repository
 public interface EmpRepository extends JpaRepository<EmpBean, String> {

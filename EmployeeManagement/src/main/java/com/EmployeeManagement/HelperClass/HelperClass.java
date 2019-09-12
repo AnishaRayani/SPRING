@@ -12,8 +12,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
 
-import com.comakeit.ems.AdminBean;
-import com.comakeit.ems.EmpBean;
+import com.comakeit.ems.bean.AdminBean;
+import com.comakeit.ems.bean.EmpBean;
 
 @Service
 public class HelperClass {

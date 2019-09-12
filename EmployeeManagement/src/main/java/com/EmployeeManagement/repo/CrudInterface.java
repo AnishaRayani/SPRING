@@ -2,9 +2,9 @@ package com.EmployeeManagement.repo;
 
 import java.util.List;
 
-import com.comakeit.ems.AdminBean;
-import com.comakeit.ems.EmpBean;
-import com.comakeit.ems.LeaveBean;
+import com.comakeit.ems.bean.AdminBean;
+import com.comakeit.ems.bean.EmpBean;
+import com.comakeit.ems.bean.LeaveBean;
 
 public interface CrudInterface {
 

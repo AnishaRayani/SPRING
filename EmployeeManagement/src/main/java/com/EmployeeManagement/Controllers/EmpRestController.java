@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.EmployeeManagement.dao.AddEmpDao;
 import com.EmployeeManagement.dao.DeleteEmpdao;
-import com.comakeit.ems.EmpBean;
+import com.comakeit.ems.bean.EmpBean;
 
 @RestController
 public class EmpRestController {

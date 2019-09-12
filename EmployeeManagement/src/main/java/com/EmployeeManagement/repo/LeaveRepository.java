@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.comakeit.ems.LeaveBean;
+import com.comakeit.ems.bean.LeaveBean;
 
 @Repository
 public interface LeaveRepository extends JpaRepository<LeaveBean, Integer> {
