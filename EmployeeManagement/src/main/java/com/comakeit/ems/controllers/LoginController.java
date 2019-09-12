@@ -1,4 +1,4 @@
-package com.EmployeeManagement.Controllers;
+package com.comakeit.ems.controllers;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -7,8 +7,9 @@ import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import com.EmployeeManagement.HelperClass.HelperClass;
+
 import com.comakeit.ems.bean.AdminBean;
+import com.comakeit.ems.helperclass.HelperClass;
 
 @Controller
 public class LoginController {

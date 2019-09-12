@@ -1,12 +1,12 @@
-package com.EmployeeManagement.dao;
+package com.comakeit.ems.dao;
 
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.EmployeeManagement.repo.Crud;
-import com.EmployeeManagement.repo.EmpRepository;
 import com.comakeit.ems.bean.EmpBean;
+import com.comakeit.ems.repo.Crud;
+import com.comakeit.ems.repo.EmpRepository;
 
 @Component
 public class DeleteEmpdao {

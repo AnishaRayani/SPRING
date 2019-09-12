@@ -1,4 +1,4 @@
-package com.EmployeeManagement.Controllers;
+package com.comakeit.ems.controllers;
 
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
@@ -8,8 +8,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import com.EmployeeManagement.HelperClass.HelperClass;
+
 import com.comakeit.ems.bean.EmpBean;
+import com.comakeit.ems.helperclass.HelperClass;
 
 @Controller
 public class ListEmpController {

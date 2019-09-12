@@ -1,4 +1,4 @@
-package com.EmployeeManagement.Controllers;
+package com.comakeit.ems.controllers;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.EmployeeManagement.dao.ListEmpDao;
 import com.comakeit.ems.bean.EmpBean;
+import com.comakeit.ems.dao.ListEmpDao;
 
 @RestController
 @RequestMapping(value = "restlist")

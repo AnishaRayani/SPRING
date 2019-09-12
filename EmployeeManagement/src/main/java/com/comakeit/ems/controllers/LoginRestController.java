@@ -1,12 +1,12 @@
-package com.EmployeeManagement.Controllers;
+package com.comakeit.ems.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.EmployeeManagement.dao.ValidationDao;
 import com.comakeit.ems.bean.AdminBean;
+import com.comakeit.ems.dao.ValidationDao;
 
 @RestController
 @RequestMapping(value = "restlogin")

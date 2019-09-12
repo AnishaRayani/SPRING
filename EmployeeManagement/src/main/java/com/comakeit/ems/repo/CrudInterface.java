@@ -1,4 +1,4 @@
-package com.EmployeeManagement.repo;
+package com.comakeit.ems.repo;
 
 import java.util.List;
 

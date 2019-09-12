@@ -1,4 +1,4 @@
-package com.EmployeeManagement.HelperClass;
+package com.comakeit.ems.helperclass;
 
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;

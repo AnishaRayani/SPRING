@@ -1,4 +1,4 @@
-package com.EmployeeManagement.mainclass;
+package com.comakeit.ems.mainclass;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,10 +7,10 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@ComponentScan(basePackages = { "com.EmployeeManagement.dao", "com.EmployeeManagement.repo",
-		"com.EmployeeManagement.HelperClass", "com.EmployeeManagement.Controllers" })
-@EntityScan(basePackages = { "com.EmployeeManagement.bean" })
-@EnableJpaRepositories(basePackages = { "com.EmployeeManagement.repo" })
+@ComponentScan(basePackages = { "com.comakeit.ems.dao", "com.comakeit.ems.repo",
+		"com.comakeit.ems.helperclass", "com.comakeit.ems.controllers" })
+@EntityScan(basePackages = { "com.comakeit.ems.bean" })
+@EnableJpaRepositories(basePackages = { "com.comakeit.ems.repo" })
 public class EmployeeManagementApplication {
 
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.EmployeeManagement.Controllers;
+package com.comakeit.ems.controllers;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.EmployeeManagement.dao.AddEmpLeaveDao;
-import com.EmployeeManagement.dao.CheckStatusDao;
-import com.EmployeeManagement.dao.GrantLeaveDao;
-import com.EmployeeManagement.dao.GrantPermissionDao;
 import com.comakeit.ems.bean.LeaveBean;
+import com.comakeit.ems.dao.AddEmpLeaveDao;
+import com.comakeit.ems.dao.CheckStatusDao;
+import com.comakeit.ems.dao.GrantLeaveDao;
+import com.comakeit.ems.dao.GrantPermissionDao;
 
 @RestController
 @RequestMapping(value = "restleave")

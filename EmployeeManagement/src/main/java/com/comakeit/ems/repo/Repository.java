@@ -1,4 +1,4 @@
-package com.EmployeeManagement.repo;
+package com.comakeit.ems.repo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

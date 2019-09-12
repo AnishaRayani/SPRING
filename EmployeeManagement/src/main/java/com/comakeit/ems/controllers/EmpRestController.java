@@ -1,13 +1,13 @@
-package com.EmployeeManagement.Controllers;
+package com.comakeit.ems.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.EmployeeManagement.dao.AddEmpDao;
-import com.EmployeeManagement.dao.DeleteEmpdao;
 import com.comakeit.ems.bean.EmpBean;
+import com.comakeit.ems.dao.AddEmpDao;
+import com.comakeit.ems.dao.DeleteEmpdao;
 
 @RestController
 public class EmpRestController {

@@ -1,13 +1,13 @@
-package com.EmployeeManagement.dao;
+package com.comakeit.ems.dao;
 
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.EmployeeManagement.repo.Crud;
 import com.comakeit.ems.bean.EmpBean;
 import com.comakeit.ems.bean.LeaveBean;
+import com.comakeit.ems.repo.Crud;
 
 @Component
 public class GrantLeaveDao {
