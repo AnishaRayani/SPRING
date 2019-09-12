@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import com.EmployeeManagement.bean.EmpBean;
-import com.EmployeeManagement.bean.LeaveBean;
+
 import com.EmployeeManagement.repo.Crud;
+import com.comakeit.ems.EmpBean;
+import com.comakeit.ems.LeaveBean;
 
 @Component
 public class GrantLeaveDao {

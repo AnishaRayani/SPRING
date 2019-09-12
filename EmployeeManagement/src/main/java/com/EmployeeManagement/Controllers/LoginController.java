@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import com.EmployeeManagement.HelperClass.HelperClass;
-import com.EmployeeManagement.bean.AdminBean;
+import com.comakeit.ems.AdminBean;
 
 @Controller
 public class LoginController {

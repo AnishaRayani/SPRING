@@ -3,7 +3,8 @@ package com.EmployeeManagement.repo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import com.EmployeeManagement.bean.AdminBean;
+
+import com.comakeit.ems.AdminBean;
 
 @org.springframework.stereotype.Repository
 public interface Repository extends JpaRepository<AdminBean, String> {

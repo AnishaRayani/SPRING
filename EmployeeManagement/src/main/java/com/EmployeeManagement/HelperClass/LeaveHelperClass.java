@@ -12,7 +12,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
-import com.EmployeeManagement.bean.LeaveBean;
+
+import com.comakeit.ems.LeaveBean;
 
 @Service
 public class LeaveHelperClass {

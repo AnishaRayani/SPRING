@@ -3,8 +3,9 @@ package com.EmployeeManagement.dao;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import com.EmployeeManagement.bean.LeaveBean;
+
 import com.EmployeeManagement.repo.Crud;
+import com.comakeit.ems.LeaveBean;
 
 @Component
 public class CheckStatusDao {

@@ -5,11 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.EmployeeManagement.bean.LeaveBean;
+
 import com.EmployeeManagement.dao.AddEmpLeaveDao;
 import com.EmployeeManagement.dao.CheckStatusDao;
 import com.EmployeeManagement.dao.GrantLeaveDao;
 import com.EmployeeManagement.dao.GrantPermissionDao;
+import com.comakeit.ems.LeaveBean;
 
 @RestController
 @RequestMapping(value = "restleave")

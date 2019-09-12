@@ -5,9 +5,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import com.EmployeeManagement.bean.EmpBean;
+
 import com.EmployeeManagement.repo.Crud;
 import com.EmployeeManagement.repo.EmpRepository;
+import com.comakeit.ems.EmpBean;
 
 @Component
 public class AddEmpDao {

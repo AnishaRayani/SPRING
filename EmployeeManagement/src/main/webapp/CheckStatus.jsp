@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.*"%>
-<%@page import="com.EmployeeManagement.bean.LeaveBean"%>
+<%@page import="com.comakeit.ems.LeaveBean"%>
 <!DOCTYPE html>
 <html>
 <head>

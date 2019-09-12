@@ -1,4 +1,4 @@
-package com.EmployeeManagement.bean;
+package com.comakeit.ems;
 
 import java.util.List;
 import javax.persistence.Entity;

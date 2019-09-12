@@ -1,5 +1,5 @@
 
-package com.EmployeeManagement.bean;
+package com.comakeit.ems;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

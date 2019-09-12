@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import com.EmployeeManagement.HelperClass.LeaveHelperClass;
-import com.EmployeeManagement.bean.LeaveBean;
+import com.comakeit.ems.LeaveBean;
 
 @Controller
 public class EmpLeaveController {
