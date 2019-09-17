@@ -1,25 +1,22 @@
-package com.comakeit.ems.dao;
+package com.comakeit.ems.service;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.comakeit.ems.bean.LeaveBean;
-import com.comakeit.ems.repo.Crud;
+import com.comakeit.ems.repo.Leave;
 
 @Component
-public class CheckStatusDao {
+public class CheckStatus {
 
 	@Autowired
-	private Crud crud;
+	private Leave leaverepo;
 
-	/*
-	 * To check status for the applied leave which calls crud to perform this
-	 * function
-	 */
 	public List<LeaveBean> checkstatus(LeaveBean leavebean) {
 
-		List<LeaveBean> list = crud.checkstatus(leavebean);
+		List<LeaveBean> list = leaverepo.checkstatus(leavebean.getEmpname());
 
 		return list;
 	}

@@ -1,9 +1,10 @@
 package com.comakeit.ems.controllers;
 
 import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,15 +15,11 @@ import com.comakeit.ems.helperclass.LeaveHelperClass;
 
 @Controller
 public class EmpLeaveController {
-	@Autowired
-	Environment environment;
+	
 	@Autowired
 	LeaveHelperClass leavehelperclass;
 
-	/*
-	 * To apply leave as an employee or manager which calls empleave in
-	 * LeaveHelperClass to perform this function
-	 */
+	
 	@RequestMapping(value = "/empleave")
 	public ModelAndView empleave(LeaveBean leavebean, HttpServletRequest request) {
 
@@ -42,10 +39,7 @@ public class EmpLeaveController {
 		}
 	}
 
-	/*
-	 * To retrieve a list of employee under a particular manager to grant permission
-	 * for leave which calls grantleave in LeaveHelperClass to perform this function
-	 */
+	
 	@RequestMapping(value = "/grantleave")
 	public ModelAndView grantleave(LeaveBean leavebean, HttpServletRequest request) {
 
@@ -67,10 +61,7 @@ public class EmpLeaveController {
 
 	}
 
-	/*
-	 * To accept or reject the leave by the manager which calls grantpermission in
-	 * LeaveHelperClass to perform this function
-	 */
+	
 	@RequestMapping(value = "/grantpermission")
 	public ModelAndView grantpermission(@RequestParam("status") String status, @RequestParam("id") int id,
 			LeaveBean leavebean, HttpServletRequest request) {
@@ -79,8 +70,8 @@ public class EmpLeaveController {
 
 		if (result.isEmpty()) {
 
-			ModelAndView mv = new ModelAndView("GrantLeave");
-			mv.addObject("errMessage", "ERROR !!!!");
+			ModelAndView mv = new ModelAndView("ManagerLeave");
+			mv.addObject("errMessage", "ERROR !!!! The List is Empty");
 
 			return mv;
 
@@ -93,10 +84,7 @@ public class EmpLeaveController {
 		}
 	}
 
-	/*
-	 * To check status for the applied leave which calls checkstatus in
-	 * LeaveHelperClass to perform this function
-	 */
+	
 	@RequestMapping(value = "/checkstatus")
 	public ModelAndView checkstatus(LeaveBean leavebean, HttpServletRequest request) {
 

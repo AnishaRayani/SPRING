@@ -21,7 +21,7 @@
 </head>
 <link rel="stylesheet" type="text/css" href="Style.css">
 <body>
-	<form name="form" action="/listempbyreport?varname=employeereporting"
+	<form name="form" action="/listempbyreport"
 		method="POST" onsubmit="return validate()">
 		ReportingManager:<input type="text" name="reportingmanager"><br>
 		<br> <br> <span><%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage")%></span>

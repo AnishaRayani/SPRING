@@ -37,10 +37,8 @@
 				<td><%=b.getEnddate()%></td>
 				<td><%=b.getReason()%></td>
 				<td><%=b.getStatus()%></td>
-				<td><a href=/grantpermission?status=accept&id=
-					<%=b.getLeaveid()%>>>accept</a></td>
-				<td><a href=/grantpermission?status=reject&id=
-					<%=b.getLeaveid()%>>>reject</a></td>
+				<td><a href=/grantpermission?status=accept&id=<%=b.getLeaveid()%>>>accept</a></td>
+				<td><a href=/grantpermission?status=reject&id=<%=b.getLeaveid()%>>>reject</a></td>
 			</tr>
 			<%
 				}

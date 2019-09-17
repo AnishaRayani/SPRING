@@ -1,7 +1,8 @@
 package com.comakeit.ems.controllers;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -12,14 +13,10 @@ import com.comakeit.ems.helperclass.HelperClass;
 
 @Controller
 public class EmpController {
-	@Autowired
-	Environment environment;
+	
 	@Autowired
 	HelperClass helperclass;
 
-	/*
-	 * To add an employee which calls addemp in HelperClass to perform this function
-	 */
 	@RequestMapping(value = "/add")
 	public ModelAndView addemp(EmpBean empbean, AdminBean adminbean) {
 
@@ -41,15 +38,11 @@ public class EmpController {
 
 	}
 
-	/*
-	 * To delete an employee which calls restdelete in emprestcontroller to perform
-	 * this function
-	 */
 	@RequestMapping(value = "/delete")
 	public ModelAndView deleteemp(EmpBean empbean) {
 
-		String result = helperclass.deleteemp(empbean);
-
+		String result=helperclass.deleteemp(empbean);
+		
 		if (result.equals("SUCCESS")) {
 
 			ModelAndView mv = new ModelAndView("DeleteEmpSuccess");

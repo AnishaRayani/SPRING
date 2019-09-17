@@ -2,8 +2,8 @@ package com.comakeit.ems.controllers;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -14,16 +14,10 @@ import com.comakeit.ems.helperclass.HelperClass;
 @Controller
 public class LoginController {
 
-	@Autowired
-	Environment environment;
+	
 	@Autowired
 	HelperClass helperclass;
-
-	/*
-	 * To validate the username and password and tell whether it is a manager ,
-	 * employee or admin which calls validate in HelperClass to perform this
-	 * function
-	 */
+	
 	@RequestMapping(value = "/validate")
 	public ModelAndView validate(AdminBean adminbean, HttpServletRequest request) {
 
@@ -57,9 +51,7 @@ public class LoginController {
 
 	}
 
-	/*
-	 * TO LOGOUT FROM THE SESSION
-	 */
+	
 	@RequestMapping(value = "/logout")
 	public ModelAndView logout() {
 

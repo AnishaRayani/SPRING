@@ -1,28 +1,25 @@
 package com.comakeit.ems.restcontrollers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.comakeit.ems.bean.AdminBean;
-import com.comakeit.ems.dao.ValidationDao;
+import com.comakeit.ems.service.Login;
 
 @RestController
 @RequestMapping(value = "restlogin")
 public class LoginRestController {
 
 	@Autowired
-	ValidationDao vd;
+	Login login;
 
-	/*
-	 * To validate the username and password and tell whether it is a manager ,
-	 * employee or admin which calls ValidationDao to perform this function
-	 */
-	@RequestMapping(value = "/restvalidate")
+	@PostMapping(value = "/restvalidate")
 	public String validate(@RequestBody AdminBean adminbean) {
 
-		String result = vd.get(adminbean);
+		String result = login.get(adminbean);
 
 		return result;
 	}

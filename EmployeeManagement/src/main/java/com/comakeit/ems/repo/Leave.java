@@ -11,25 +11,14 @@ import org.springframework.transaction.annotation.Transactional;
 import com.comakeit.ems.bean.LeaveBean;
 
 @Repository
-public interface LeaveRepository extends JpaRepository<LeaveBean, Integer> {
+public interface Leave extends JpaRepository<LeaveBean, Integer> {
 
-	/*
-	 * To retrieve a list of leaves applied by an employee under a particular
-	 * manager
-	 */
-	@Query(value = "select e from LeaveBean e where e.empname in :empnames")
+	@Query(value = "select e from LeaveBean e where e.empname in :empnames AND e.status='pending'")
 	public List<LeaveBean> getlisttogrant(@Param("empnames") List<String> empnames);
 
-	/*
-	 * To retrieve a list of leaves applied by an employee to check status for the
-	 * applied leave
-	 */
 	@Query(value = "select e from LeaveBean e where e.empname = :name")
 	public List<LeaveBean> checkstatus(@Param("name") String name);
 
-	/*
-	 * To accept or reject the leave by the manager
-	 */
 	@Modifying
 	@Transactional
 	@Query(value = "UPDATE LeaveBean l SET l.status = :status  WHERE l.leaveid = :leaveid")

@@ -1,10 +1,10 @@
 package com.comakeit.ems.bean;
 
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 import org.springframework.stereotype.Component;
 
 @Component
@@ -19,7 +19,6 @@ public class LeaveBean {
 	private String enddate;
 	private String reason;
 	private String status;
-	static List<LeaveBean> list;
 
 	public String getStatus() {
 		return status;
@@ -69,12 +68,4 @@ public class LeaveBean {
 		this.reason = reason;
 	}
 
-	public void setList(List<LeaveBean> listPersons) {
-		LeaveBean.list = listPersons;
-	}
-
-	public List<LeaveBean> getList() {
-		return LeaveBean.list;
-
-	}
 }

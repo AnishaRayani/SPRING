@@ -1,28 +1,28 @@
-package com.comakeit.ems.dao;
+package com.comakeit.ems.service;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.comakeit.ems.bean.AdminBean;
 import com.comakeit.ems.bean.EmpBean;
-import com.comakeit.ems.repo.Crud;
+import com.comakeit.ems.repo.Emp;
+import com.comakeit.ems.repo.LoginValidation;
 
 @Component
-public class ValidationDao {
+public class Login {
 
 	@Autowired
-	private Crud crud;
+	private LoginValidation login;
+	@Autowired
+	private Emp emprepo;
 
-	/*
-	 * To validate the username and password and tell whether it is a manager ,
-	 * employee or admin which calls crud to perform this function
-	 */
 	public String get(AdminBean adminbean) {
 
 		String name = adminbean.getusername();
 
-		String list = crud.getAdminUsername(adminbean);
+		String list = login.getAdminUsername(adminbean.getusername(), adminbean.getPassword());
 
 		if (list == null) {
 
@@ -34,7 +34,7 @@ public class ValidationDao {
 				return "AdminOptions";
 			} else {
 
-				List<EmpBean> user = crud.getuser(name);
+				List<EmpBean> user = emprepo.getuser(name);
 
 				if (user.isEmpty())
 
@@ -48,5 +48,7 @@ public class ValidationDao {
 		}
 
 	}
+
+	
 
 }

@@ -38,9 +38,4 @@ public class AdminBean {
 		this.password = password;
 	}
 
-	@Override
-	public String toString() {
-		return "AdminBean [username=" + username + ", password=" + password + ", role=" + role + "]";
-	}
-
 }

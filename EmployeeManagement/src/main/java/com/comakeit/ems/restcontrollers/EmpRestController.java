@@ -1,41 +1,46 @@
 package com.comakeit.ems.restcontrollers;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.comakeit.ems.bean.EmpBean;
-import com.comakeit.ems.dao.AddEmpDao;
-import com.comakeit.ems.dao.DeleteEmpdao;
+import com.comakeit.ems.service.AddEmp;
+import com.comakeit.ems.service.DeleteEmp;
 
 @RestController
 public class EmpRestController {
 
 	@Autowired
-	AddEmpDao add;
+	AddEmp add;
 	@Autowired
-	DeleteEmpdao delete;
-
-	/*
-	 * To add an employee which calls AddEmpDao to perform this function
-	 */
-	@RequestMapping(value = "/restadd")
+	DeleteEmp delete;
+    static String result;
+	@PostMapping(value = "/restadd")
 	public EmpBean addemp(@RequestBody EmpBean empbean) {
 
-		EmpBean result = add.addemp(empbean);
+		EmpBean result1 = add.addemp(empbean);
 
-		return result;
+		return result1;
 	}
 
-	/*
-	 * To delete an employee which calls DeleteEmpdao to perform this function
-	 */
-	@RequestMapping(value = "/restdelete")
-	public String deleteemp(@RequestBody EmpBean empbean) {
+	@DeleteMapping(value = "/restdelete/{id}")
+	public void deleteemp(@PathVariable("id") String id) {
 
-		String result = delete.deleteemp(empbean);
-
+	 result=delete.deleteemp(id);
+	  System.out.println(result + "in rest controller");
+	 
+		
+	}
+	@GetMapping(value="/getstatus")
+	public String getstatus()
+	{
 		return result;
 	}
 }

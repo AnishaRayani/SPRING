@@ -1,8 +1,8 @@
 package com.comakeit.ems.bean;
 
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+
 import org.springframework.stereotype.Component;
 
 @Component
@@ -16,7 +16,6 @@ public class EmpBean {
 	private String departmentname;
 	private String reportingmanager;
 	private float salary;
-	static List<EmpBean> list;
 
 	public String getEmpid() {
 		return empid;
@@ -64,14 +63,6 @@ public class EmpBean {
 
 	public void setSalary(float salary) {
 		this.salary = salary;
-	}
-
-	public void setList(List<EmpBean> listPersons) {
-		EmpBean.list = listPersons;
-	}
-
-	public List<EmpBean> getList() {
-		return EmpBean.list;
 	}
 
 }

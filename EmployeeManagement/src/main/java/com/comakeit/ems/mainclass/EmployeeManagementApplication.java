@@ -7,8 +7,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@ComponentScan(basePackages = { "com.comakeit.ems.dao", "com.comakeit.ems.repo",
-		"com.comakeit.ems.helperclass", "com.comakeit.ems.controllers","com.comakeit.ems.restcontrollers" })
+@ComponentScan(basePackages = { "com.comakeit.ems.service", "com.comakeit.ems.repo", "com.comakeit.ems.helperclass",
+		"com.comakeit.ems.controllers", "com.comakeit.ems.restcontrollers" })
 @EntityScan(basePackages = { "com.comakeit.ems.bean" })
 @EnableJpaRepositories(basePackages = { "com.comakeit.ems.repo" })
 public class EmployeeManagementApplication {

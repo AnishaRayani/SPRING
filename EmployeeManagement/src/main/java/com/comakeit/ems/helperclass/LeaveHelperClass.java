@@ -1,11 +1,11 @@
 package com.comakeit.ems.helperclass;
 
 import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.core.env.Environment;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -14,17 +14,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
 import com.comakeit.ems.bean.LeaveBean;
+import com.comakeit.ems.constants.Constants;
 
 @Service
 public class LeaveHelperClass {
 
-	@Autowired
-	Environment environment;
-
-	/*
-	 * To apply leave as an employee or manager which calls restempleave in
-	 * empleaverestcontroller to perform this function
-	 */
+	
+	
 	public String empleave(LeaveBean leavebean, HttpServletRequest request) {
 
 		HttpSession session = request.getSession();
@@ -33,20 +29,14 @@ public class LeaveHelperClass {
 		leavebean.setEmpname(name);
 
 		RestTemplate rt = new RestTemplate();
-		String port = environment.getProperty("local.server.port");
 
-		String result = rt.postForObject("http://localhost:" + port + "/restleave/restempleave", leavebean,
+		String result = rt.postForObject(Constants.url + "/restleave/restempleave", leavebean,
 				String.class);
 
 		return result;
 
 	}
 
-	/*
-	 * To retrieve a list of employee under a particular manager to grant permission
-	 * for leave which calls restgrantleave in empleaverestcontroller to perform
-	 * this function
-	 */
 	public List<LeaveBean> grantleave(LeaveBean leavebean, HttpServletRequest request) {
 
 		HttpSession session = request.getSession();
@@ -56,10 +46,9 @@ public class LeaveHelperClass {
 
 		HttpEntity<LeaveBean> requestEntity = new HttpEntity<>(leavebean);
 		RestTemplate restTemplate = new RestTemplate();
-		String port = environment.getProperty("local.server.port");
 
 		ResponseEntity<List<LeaveBean>> response = restTemplate.exchange(
-				"http://localhost:" + port + "/restleave/restgrantleave", HttpMethod.POST, requestEntity,
+				Constants.url + "/restleave/restgrantleave", HttpMethod.POST, requestEntity,
 				new ParameterizedTypeReference<List<LeaveBean>>() {
 				});
 		List<LeaveBean> list = response.getBody();
@@ -68,10 +57,7 @@ public class LeaveHelperClass {
 
 	}
 
-	/*
-	 * To accept or reject the leave by the manager which calls restgrant in
-	 * empleaverestcontroller to perform this function
-	 */
+	
 	public List<LeaveBean> grantpermission(@RequestParam("status") String status, @RequestParam("id") int id,
 			LeaveBean leavebean, HttpServletRequest request) {
 
@@ -84,9 +70,8 @@ public class LeaveHelperClass {
 
 		RestTemplate rt = new RestTemplate();
 		HttpEntity<LeaveBean> requestEntity = new HttpEntity<>(leavebean);
-		String port = environment.getProperty("local.server.port");
 
-		ResponseEntity<List<LeaveBean>> result = rt.exchange("http://localhost:" + port + "/restleave/restgrant",
+		ResponseEntity<List<LeaveBean>> result = rt.exchange(Constants.url + "/restleave/restgrant",
 				HttpMethod.POST, requestEntity, new ParameterizedTypeReference<List<LeaveBean>>() {
 				});
 		List<LeaveBean> list = result.getBody();
@@ -95,10 +80,7 @@ public class LeaveHelperClass {
 
 	}
 
-	/*
-	 * To check status for the applied leave which calls restcheckstatus in
-	 * empleaverestcontroller to perform this function
-	 */
+	
 	public List<LeaveBean> checkstatus(LeaveBean leavebean, HttpServletRequest request) {
 
 		HttpSession session = request.getSession();
@@ -108,10 +90,9 @@ public class LeaveHelperClass {
 
 		HttpEntity<LeaveBean> requestEntity = new HttpEntity<>(leavebean);
 		RestTemplate restTemplate = new RestTemplate();
-		String port = environment.getProperty("local.server.port");
 
 		ResponseEntity<List<LeaveBean>> response = restTemplate.exchange(
-				"http://localhost:" + port + "/restleave/restcheckstatus", HttpMethod.POST, requestEntity,
+				Constants.url + "/restleave/restcheckstatus", HttpMethod.POST, requestEntity,
 				new ParameterizedTypeReference<List<LeaveBean>>() {
 				});
 		List<LeaveBean> list = response.getBody();

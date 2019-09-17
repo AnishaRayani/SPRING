@@ -1,26 +1,25 @@
-package com.comakeit.ems.dao;
+package com.comakeit.ems.service;
 
 import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.comakeit.ems.bean.AdminBean;
 import com.comakeit.ems.bean.EmpBean;
-import com.comakeit.ems.repo.Crud;
-import com.comakeit.ems.repo.EmpRepository;
+import com.comakeit.ems.repo.Emp;
+import com.comakeit.ems.repo.LoginValidation;
 
 @Component
-public class AddEmpDao {
+public class AddEmp {
 
 	@Autowired
-	private Crud crud;
+	private LoginValidation repo;
 	@Autowired
-	private EmpRepository emprepo;
+	private Emp emprepo;
 
-	/*
-	 * To add an employee which calls crud to perform this function
-	 */
 	public EmpBean addemp(EmpBean empbean) {
 
 		Optional<EmpBean> id = emprepo.findById(empbean.getEmpid());
@@ -34,8 +33,14 @@ public class AddEmpDao {
 			matcher = pattern.matcher(empbean.getEmail());
 
 			if (matcher.matches()) {
+				AdminBean adminbean = new AdminBean();
 
-				EmpBean list = crud.saveEmployee(empbean);
+				adminbean.setusername(empbean.getEmpname());
+				adminbean.setPassword(empbean.getEmpname() + "123");
+				adminbean.setRole("user");
+
+				repo.save(adminbean);
+				EmpBean list = emprepo.save(empbean);
 
 				return list;
 			}

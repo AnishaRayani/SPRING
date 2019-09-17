@@ -16,14 +16,8 @@ import com.comakeit.ems.helperclass.HelperClass;
 public class ListEmpController {
 
 	@Autowired
-	Environment environment;
-	@Autowired
 	HelperClass helperclass;
 
-	/*
-	 * To retrieve a list of employee details order by employee id which calls
-	 * listempbyid in HelperClass to perform this function
-	 */
 	@RequestMapping(value = "/listempbyid")
 	public ModelAndView listempbyid() {
 
@@ -36,10 +30,6 @@ public class ListEmpController {
 
 	}
 
-	/*
-	 * To retrieve a list of employee details order by department name which calls
-	 * listempbydepart in HelperClass to perform this function
-	 */
 	@RequestMapping(value = "/listempbydepart")
 	public ModelAndView listempbydepart() {
 
@@ -52,10 +42,6 @@ public class ListEmpController {
 
 	}
 
-	/*
-	 * To retrieve a list of employee details under a particular manager which calls
-	 * listempbyreport in HelperClass to perform this function
-	 */
 	@RequestMapping(value = "/listempbyreport")
 	public ModelAndView listempbyreport(EmpBean empbean, HttpServletRequest request) {
 
@@ -68,10 +54,6 @@ public class ListEmpController {
 
 	}
 
-	/*
-	 * To retrieve a list of employee details with pf which calls listempwithpf in
-	 * HelperClass to perform this function
-	 */
 	@RequestMapping(value = "/listwithpf")
 	public ModelAndView listempwithpf() {
 
@@ -84,10 +66,6 @@ public class ListEmpController {
 
 	}
 
-	/*
-	 * To retrieve a list of employee details whose salary range between 10000 and
-	 * 20000 which calls listempwithrange in HelperClass to perform this function
-	 */
 	@RequestMapping(value = "/listwithrange")
 	public ModelAndView listempwithrange() {
 
